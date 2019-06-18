@@ -1,12 +1,11 @@
-package com.marciovieira.cursomc;
+package com.marciovieira.cursomc.services;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.stereotype.Service;
 
 import com.marciovieira.cursomc.domain.Categoria;
 import com.marciovieira.cursomc.domain.Cidade;
@@ -31,10 +30,9 @@ import com.marciovieira.cursomc.repositories.PagamentoRepository;
 import com.marciovieira.cursomc.repositories.PedidoRepository;
 import com.marciovieira.cursomc.repositories.ProdutoRepository;
 
-@SpringBootApplication
-public class CursomcApplication implements CommandLineRunner {
-
-	/*
+@Service
+public class DBService {
+	
 	@Autowired
 	private CategoriaRepository categoriaRepository;
 	@Autowired
@@ -53,16 +51,9 @@ public class CursomcApplication implements CommandLineRunner {
 	private PagamentoRepository pagamentoRepository;
 	@Autowired
 	private ItemPedidoRepository itemPedidoRepository;
-	*/
-	
-	public static void main(String[] args) {
-		SpringApplication.run(CursomcApplication.class, args);
-	}
 
-	@Override
-	public void run(String... args) throws Exception {
-		
-		/*
+	public void instantiateTestDatabase() throws ParseException {
+			
 		Categoria cat1 = new Categoria(null, "Informática");
 		Categoria cat2 = new Categoria(null, "Escritório");
 		Categoria cat3 = new Categoria(null, "Cama mesa e banho");
@@ -160,7 +151,9 @@ public class CursomcApplication implements CommandLineRunner {
 		p3.getItens().addAll(Arrays.asList(ip2));
 		
 		itemPedidoRepository.saveAll(Arrays.asList(ip1, ip2, ip3));
-		*/
+		
+		
+		
 	}
 
 }
